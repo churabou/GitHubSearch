@@ -91,6 +91,7 @@
 		C9B9D2CF20DF3B40002B3609 = {
 			isa = PBXGroup;
 			children = (
+				C9B9D30920DF3D44002B3609 /* Module */,
 				C9B9D2DA20DF3B40002B3609 /* GitHubSearch */,
 				C9B9D2EF20DF3B45002B3609 /* GitHubSearchTests */,
 				C9B9D2FA20DF3B45002B3609 /* GitHubSearchUITests */,
@@ -139,6 +140,53 @@
 				C9B9D2FD20DF3B45002B3609 /* Info.plist */,
 			);
 			path = GitHubSearchUITests;
+			sourceTree = "<group>";
+		};
+		C9B9D30920DF3D44002B3609 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9D30A20DF3D44002B3609 /* API */,
+				C9B9D30D20DF3D44002B3609 /* Views */,
+			);
+			path = Module;
+			sourceTree = SOURCE_ROOT;
+		};
+		C9B9D30A20DF3D44002B3609 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9D30B20DF3D44002B3609 /* Response */,
+				C9B9D30C20DF3D44002B3609 /* Request */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C9B9D30B20DF3D44002B3609 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		C9B9D30C20DF3D44002B3609 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C9B9D30D20DF3D44002B3609 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9D30E20DF3D44002B3609 /* Search */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9B9D30E20DF3D44002B3609 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		D2888F32E97D7EC95006610D /* Frameworks */ = {
