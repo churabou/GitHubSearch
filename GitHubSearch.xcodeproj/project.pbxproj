@@ -15,6 +15,9 @@
 		C9B9D2FC20DF3B45002B3609 /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9D2FB20DF3B45002B3609 /* GitHubSearchUITests.swift */; };
 		C9B9D31020DF3DEA002B3609 /* SearchRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9D30F20DF3DEA002B3609 /* SearchRepositoryView.swift */; };
 		C9B9D31220DF3E4D002B3609 /* SearchRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9D31120DF3E4C002B3609 /* SearchRepositoryViewController.swift */; };
+		C9B9D31420DF3FC1002B3609 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9D31320DF3FC1002B3609 /* BaseView.swift */; };
+		C9B9D31620DF3FDD002B3609 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9D31520DF3FDD002B3609 /* BaseTableViewCell.swift */; };
+		C9B9D31920DF402C002B3609 /* ChuraLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9D31820DF402C002B3609 /* ChuraLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		C9B9D2FD20DF3B45002B3609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B9D30F20DF3DEA002B3609 /* SearchRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryView.swift; sourceTree = "<group>"; };
 		C9B9D31120DF3E4C002B3609 /* SearchRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryViewController.swift; sourceTree = "<group>"; };
+		C9B9D31320DF3FC1002B3609 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C9B9D31520DF3FDD002B3609 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		C9B9D31820DF402C002B3609 /* ChuraLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuraLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 		C9B9D30920DF3D44002B3609 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C9B9D31B20DF404A002B3609 /* Common */,
 				C9B9D30A20DF3D44002B3609 /* API */,
 				C9B9D30D20DF3D44002B3609 /* Views */,
 			);
@@ -187,6 +194,32 @@
 				C9B9D31120DF3E4C002B3609 /* SearchRepositoryViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		C9B9D31720DF3FED002B3609 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9D31320DF3FC1002B3609 /* BaseView.swift */,
+				C9B9D31520DF3FDD002B3609 /* BaseTableViewCell.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		C9B9D31A20DF4035002B3609 /* Utilty */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9D31820DF402C002B3609 /* ChuraLayout.swift */,
+			);
+			path = Utilty;
+			sourceTree = "<group>";
+		};
+		C9B9D31B20DF404A002B3609 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9D31A20DF4035002B3609 /* Utilty */,
+				C9B9D31720DF3FED002B3609 /* BaseView */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		D2888F32E97D7EC95006610D /* Frameworks */ = {
@@ -371,8 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B9D31220DF3E4D002B3609 /* SearchRepositoryViewController.swift in Sources */,
+				C9B9D31920DF402C002B3609 /* ChuraLayout.swift in Sources */,
 				C9B9D31020DF3DEA002B3609 /* SearchRepositoryView.swift in Sources */,
 				C9B9D2DC20DF3B40002B3609 /* AppDelegate.swift in Sources */,
+				C9B9D31620DF3FDD002B3609 /* BaseTableViewCell.swift in Sources */,
+				C9B9D31420DF3FC1002B3609 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

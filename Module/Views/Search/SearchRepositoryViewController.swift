@@ -10,7 +10,11 @@ import UIKit
 
 final class SearchRepositoryViewController: UIViewController {
     
-    override func viewDidLoad() {
-        view.backgroundColor = .orange
+    private var baseView = SearchRepositoryView()
+    private var searchBar: UISearchBar { return baseView.searchBar }
+    private var tableView: UITableView { return baseView.tableView }
+   
+    override func loadView() {
+        view = baseView
     }
 }
