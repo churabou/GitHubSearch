@@ -18,6 +18,7 @@ final class SearchRepositoryView: BaseView {
         
         searchBar.tintColor = .red
         tableView.backgroundColor = .cyan
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         addSubview(searchBar)
         addSubview(tableView)
