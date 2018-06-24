@@ -17,7 +17,11 @@ final class SearchRepositoryViewModel {
     private let bag = DisposeBag()
     private var page: BehaviorRelay<Int> = BehaviorRelay(value: 0)
     
-    init(inputs: (cellTapped: Observable<IndexPath>, searchText: ControlProperty<String>, reachedBottom: Observable<Void>)) {
+    init(inputs: (
+        cellTapped: Observable<IndexPath>,
+        searchText: ControlProperty<String>,
+        reachedBottom: Observable<Void>)
+        ) {
 
         //Observable<IndexPath> と Observable<Repository>の最後をくっつける。
         //indexPathとRepostoryにアクセスできた。
@@ -38,9 +42,6 @@ final class SearchRepositoryViewModel {
         let loadMore: Observable<Bool> = inputs.reachedBottom.map { _ in true }
         //
         let initialLoad: Observable<Bool>  = query.map { !$0.isEmpty && self.page.value == 0 }
-
-        //withLatestFrom...Observableの最後の値を合成できる、つまり最後の値にアクセスできると感じた。
-        //                 第二引数のクロージャはmapでいいのでしょうか。
 
         let request: Observable<SearchRepositoryRequest> = Observable
             .merge(initialLoad, loadMore)
