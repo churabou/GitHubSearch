@@ -7,11 +7,34 @@
 //
 
 import UIKit
+import ReactorKit
 import RxSwift
 import RxCocoa
 
-final class SearchRepositoryViewController: UIViewController {
-   
+
+final class SearchRepositoryViewController: UIViewController, View {
+    
+    var disposeBag = DisposeBag()
+    
+    func bind(reactor: SearchRepositoryViewReactor) {
+       
+        print("bind reactor")
+        
+        searchBar.rx.text.orEmpty
+            .debounce(0.3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .map { Reactor.Action.updateQuery($0) } //Observable<String> -> SearchRepositoryViewReactor.Action
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        
+        reactor.state.map { $0.query }
+            .subscribe(onNext: { (query) in
+                print("stateの変更でViewを変更 query \(query)")
+            }).disposed(by: disposeBag)
+    }
+    
+//    typealias Reactor = SearchRepositoryViewReactor;()
     //View
     private var baseView = SearchRepositoryView()
     private var searchBar: UISearchBar { return baseView.searchBar }
@@ -25,22 +48,7 @@ final class SearchRepositoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let viewModel = SearchRepositoryViewModel(inputs: (
-            cellTapped: tableView.rx.itemSelected.asObservable(),
-            searchText: searchBar.rx.text.orEmpty,
-            reachedBottom: tableView.rx.reachedBottom
-        ))
-        
-        viewModel.repositoris
-            .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = "@\(element.name)"
-            }.disposed(by: bag)
-        
-        
-        viewModel.selectedRepository.subscribe(onNext: {
-            print($0.name + " 選択された。")
-        }).disposed(by: bag)
+        reactor = SearchRepositoryViewReactor()
     }
 }
 
